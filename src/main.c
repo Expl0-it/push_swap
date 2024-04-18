@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/18 09:50:24 by mamichal         ###   ########.fr       */
+/*   Created: 2024/04/17 17:50:45 by mamichal          #+#    #+#             */
+/*   Updated: 2024/04/18 09:54:08 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-// INCLUDES
-# include <stdlib.h>
-# include "../libft/libft.h"
-
-enum	e_errors
+int	main(int argc, char **argv)
 {
-	NOT_ENOUGH_ARGUMENTS = -1
-};
-
-#endif
+	if (argc < 2)
+		return (NOT_ENOUGH_ARGUMENTS);
+	if (2 == argc)
+		argv = ft_split(*argv, ' ');
+}
