@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:37:25 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/18 11:26:36 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:57:00 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  */
 long	ft_atol(const char *nptr)
 {
-	int	minus;
+	int		minus;
 	long	num;
 
 	num = 0;
@@ -45,13 +45,14 @@ long	ft_atol(const char *nptr)
 	return (num * minus);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void)
+void	stack_init(t_stack_node **a, char **argv, bool is_argc_2)
 {
-	long a = ft_atol("   	-9872147483649");
-	printf("%ld", a);
-	return (0);
+	long	nbr;
+	int		i;
+
+	i = 0;
+	while (argv[i])
+	{
+
+	}
 }
-*/
