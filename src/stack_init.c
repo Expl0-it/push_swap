@@ -6,11 +6,12 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:37:25 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/20 17:57:00 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:22:19 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <limits.h>
 
 /** @brief Convert a string to an integer.
  *
@@ -53,6 +54,12 @@ void	stack_init(t_stack_node **a, char **argv, bool is_argc_2)
 	i = 0;
 	while (argv[i])
 	{
-
+		if (error_syntax(argv[i]))
+			error_free(a, argv, is_argc_2, SYNTAX_ERROR);
+		nbr = ft_atol(argv[i]);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+			error_free(a, argv, is_argc_2, INT_OVERFLOW);
+		if (error_repetition(*a, nbr))
+			error_free(a, argv, is_argc_2, NUMBER_REPETITION);
 	}
 }
