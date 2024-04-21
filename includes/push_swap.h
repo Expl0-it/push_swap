@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/20 22:16:35 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 15:51:41 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ enum	e_errors
 	NUMBER_REPETITION = -4
 };
 
-typedef struct s_stack_node
+typedef struct s_db_list
 {
 	int					value;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}				t_stack_node;
+	struct s_db_list	*next;
+	struct s_db_list	*prev;
+}				t_db_list;
 
 // FUNCTION DELARATIONS
 
 // stack init.c
 long	ft_atol(const char *nptr);
-void	stack_init(t_stack_node **a, char **argv, bool is_argc_2);
+void	stack_init(t_db_list **a, char **argv, bool is_argc_2);
 
 // error_free.c
 bool	error_syntax(char *str_nb);
-bool	error_repetition(t_stack_node *a, int nbr);
-void	free_stack(t_stack_node **stack);
+bool	error_repetition(t_db_list *a, int nbr);
+void	free_stack(t_db_list **stack);
 void	free_split(char **argv);
-void	error_free(t_stack_node **a, char **argv, bool is_argc_2, int code);
+void	error_free(t_db_list **a, char **argv, bool is_argc_2, int code);
 
 #endif

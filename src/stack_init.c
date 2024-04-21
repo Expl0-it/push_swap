@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:37:25 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/20 22:22:19 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:00:05 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ long	ft_atol(const char *nptr)
 	return (num * minus);
 }
 
-void	stack_init(t_stack_node **a, char **argv, bool is_argc_2)
+void	stack_init(t_db_list **a, char **argv, bool is_argc_2)
 {
 	long	nbr;
 	int		i;

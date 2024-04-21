@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 17:32:09 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/20 22:14:33 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:00:01 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	error_syntax(char *str_nb)
 	return (false);
 }
 
-bool	error_repetition(t_stack_node *a, int nbr)
+bool	error_repetition(t_db_list *a, int nbr)
 {
 	if (NULL == a)
 		return (false);
@@ -42,10 +42,10 @@ bool	error_repetition(t_stack_node *a, int nbr)
 	return (false);
 }
 
-void	free_stack(t_stack_node **stack)
+void	free_stack(t_db_list **stack)
 {
-	t_stack_node	*tmp;
-	t_stack_node	*current;
+	t_db_list	*tmp;
+	t_db_list	*current;
 
 	if (NULL == stack)
 		return ;
@@ -76,7 +76,7 @@ void	free_split(char **argv)
 	free(argv[i]);
 }
 
-void	error_free(t_stack_node **a, char **argv, bool is_argc_2, int code)
+void	error_free(t_db_list **a, char **argv, bool is_argc_2, int code)
 {
 	if (NULL != a)
 		free_stack(a);
