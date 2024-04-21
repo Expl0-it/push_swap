@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/21 17:14:22 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:11:10 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 
 enum	e_errors
 {
-	NOT_ENOUGH_ARGUMENTS = -1,
-	SYNTAX_ERROR = -2,
-	INT_OVERFLOW = -3,
-	NUMBER_REPETITION = -4
+	NOT_ENOUGH_ARGUMENTS = 1,
+	SYNTAX_ERROR = 2,
+	INT_OVERFLOW = 3,
+	NUMBER_REPETITION = 4,
+	MALLOC_ERROR = 5
 };
 
 typedef struct s_db_list
