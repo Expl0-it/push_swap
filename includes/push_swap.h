@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/21 21:23:59 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:28:46 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ typedef struct s_db_list
 // FUNCTION DELARATIONS
 
 // stack init.c
-long	ft_atol(const char *nptr);
-void	stack_init(t_db_list **a, char **argv, bool is_argc_2);
+long		ft_atol(const char *nptr);
+void		stack_init(t_db_list **a, char **argv, bool is_argc_2);
 
 // db_linked_list_utils.c
 t_db_list	*db_lstnew(int value);
 t_db_list	*db_lstlast(t_db_list *lst);
-void	db_lstadd_back(t_db_list **lst, t_db_list *element);
+void		db_lstadd_back(t_db_list **lst, t_db_list *element);
 
 // error_free.c
-bool	error_syntax(char *str_nb);
-bool	error_repetition(t_db_list *a, int nbr);
-void	free_stack(t_db_list **stack);
-void	free_split(char **argv);
-void	error_free(t_db_list **a, char **argv, bool is_argc_2, int code);
+bool		error_syntax(char *str_nb);
+bool		error_repetition(t_db_list *a, int nbr);
+void		free_stack(t_db_list **stack);
+void		free_split(char **argv);
+void		error_free(t_db_list **a, char **argv, bool is_argc_2, int code);
 
 #endif
