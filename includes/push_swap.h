@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/21 15:51:41 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:14:22 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ typedef struct s_db_list
 // stack init.c
 long	ft_atol(const char *nptr);
 void	stack_init(t_db_list **a, char **argv, bool is_argc_2);
+
+// db_linked_list_utils.c
+t_db_list	*db_lstnew(int value);
+t_db_list	*db_lstlast(t_db_list *lst);
+void	db_lstadd_back(t_db_list **lst, t_db_list *element);
 
 // error_free.c
 bool	error_syntax(char *str_nb);
