@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:37:25 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/21 16:00:05 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:21:40 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,13 @@ long	ft_atol(const char *nptr)
 
 void	stack_init(t_db_list **a, char **argv, bool is_argc_2)
 {
-	long	nbr;
-	int		i;
+	long		nbr;
+	int			i;
+	t_db_list	*new;
 
 	i = 0;
+	if (false == is_argc_2)
+		i++;
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
@@ -61,5 +64,12 @@ void	stack_init(t_db_list **a, char **argv, bool is_argc_2)
 			error_free(a, argv, is_argc_2, INT_OVERFLOW);
 		if (error_repetition(*a, nbr))
 			error_free(a, argv, is_argc_2, NUMBER_REPETITION);
+		new = db_lstnew((int)nbr);
+		if (NULL == new)
+			error_free(a, argv, is_argc_2, MALLOC_ERROR);
+		db_lstadd_back(a, new);
+		i++;
 	}
+	if (is_argc_2)
+		free_split(argv);
 }
