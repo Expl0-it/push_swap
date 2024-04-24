@@ -6,18 +6,18 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:47:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/24 13:39:23 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/24 22:53:51 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	push(t_db_list **src, t_db_list **dst)
+void	push(t_db_list **src, t_db_list **dst)
 {
 	t_db_list	*tmp;
 
 	if (NULL == *src)
-		return (1);
+		return ;
 	tmp = *src;
 	*src = (*src)->next;
 	if (*src)
@@ -34,5 +34,18 @@ int	push(t_db_list **src, t_db_list **dst)
 		tmp->next->prev = tmp;
 		*dst = tmp;
 	}
-	return (0);
+}
+
+void	pa(t_db_list **a, t_db_list **b, bool checker)
+{
+	push(a, b);
+	if (!checker)
+		ft_printf("pa\n");
+}
+
+void	pb(t_db_list **b, t_db_list **a, bool checker)
+{
+	push(b, a);
+	if (!checker)
+		ft_printf("pb\n");
 }
