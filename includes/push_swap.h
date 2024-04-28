@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/27 22:17:23 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/28 12:58:02 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ void		stack_init(t_db_list **a, char **argv, bool is_argc_2);
 
 // db_linked_list_utils.c
 t_db_list	*db_lstnew(int value);
+/*
+ * @brief Show last node of a list
+ *
+ * Returns the last node of the list
+ *
+ * @param lst The beginning of the list
+ * @return Last node of the list
+*/
 t_db_list	*db_lstlast(t_db_list *lst);
 void		db_lstadd_back(t_db_list **lst, t_db_list *element);
 
