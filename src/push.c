@@ -6,13 +6,13 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:47:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/24 22:53:51 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:47:27 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push(t_db_list **src, t_db_list **dst)
+static void	push(t_db_list **src, t_db_list **dst)
 {
 	t_db_list	*tmp;
 
