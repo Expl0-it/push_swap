@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/28 12:58:02 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:47:18 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,24 @@ bool		error_repetition(t_db_list *a, int nbr);
 void		free_stack(t_db_list **stack);
 void		free_split(char **argv);
 void		error_free(t_db_list **a, char **argv, bool is_argc_2, int code);
+
+// swap.c
+void	sa(t_db_list **a, bool checker);
+void	sb(t_db_list **b, bool checker);
+void	ss(t_db_list **a, t_db_list **b, bool checker);
+
+// push.c
+void	pa(t_db_list **a, t_db_list **b, bool checker);
+void	pb(t_db_list **b, t_db_list **a, bool checker);
+
+// rotate.c
+void	ra(t_db_list **a, bool checker);
+void	rb(t_db_list **b, bool checker);
+void	rr(t_db_list **a, t_db_list **b, bool checker);
+
+// reverse_rotate.c
+void	rra(t_db_list **a, bool checker);
+void	rrb(t_db_list **b, bool checker);
+void	rrr(t_db_list **a, t_db_list **b, bool checker);
 
 #endif
