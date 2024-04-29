@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 22:20:12 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/28 13:05:33 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:36:58 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ra(t_db_list **a, bool checker)
 {
 	rotate(a);
 	if (!checker)
-		ft_printf("ra");
+		ft_printf("ra\n");
 }
 
 void	rb(t_db_list **b, bool checker)
 {
 	rotate(b);
 	if (!checker)
-		ft_printf("rb");
+		ft_printf("rb\n");
 }
 
 void	rr(t_db_list **a, t_db_list **b, bool checker)
@@ -45,5 +45,5 @@ void	rr(t_db_list **a, t_db_list **b, bool checker)
 	rotate(a);
 	rotate(b);
 	if (!checker)
-		ft_printf("rr");
+		ft_printf("rr\n");
 }
