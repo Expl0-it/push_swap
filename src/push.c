@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:47:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/28 18:47:27 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:02:41 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	push(t_db_list **src, t_db_list **dst)
 	if (*src)
 		(*src)->prev = NULL;
 	tmp->prev = NULL;
-	if (NULL == dst)
+	if (NULL == *dst)
 	{
 		tmp->next = NULL;
 		*dst = tmp;
