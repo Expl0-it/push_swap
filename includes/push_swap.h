@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 14:01:18 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:13:57 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	sb(t_db_list **b, bool checker);
 void	ss(t_db_list **a, t_db_list **b, bool checker);
 
 // push.c
-void	pa(t_db_list **a, t_db_list **b, t_stack_sizes **sizes, bool checker);
-void	pb(t_db_list **b, t_db_list **a, t_stack_sizes **sizes, bool checker);
+void	pa(t_db_list **a, t_db_list **b, t_stack_sizes *sizes, bool checker);
+void	pb(t_db_list **b, t_db_list **a, t_stack_sizes *sizes, bool checker);
 
 // rotate.c
 void	ra(t_db_list **a, bool checker);

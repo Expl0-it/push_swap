@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:50:45 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 13:39:47 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:10:07 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_db_list	*a;
 	t_db_list	*b;
-	t_stack_sizes	*sizes;
+	t_stack_sizes	sizes;
 
 	a = NULL;
 	b = NULL;
