@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:50:45 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/21 21:29:11 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 10:47:04 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int	main(int argc, char **argv)
 	else if (2 == argc)
 		argv = ft_split(argv[1], ' ');
 	stack_init(&a, argv, 2 == argc);
+
+	free_stack(&a);
 	return (OK);
 }
