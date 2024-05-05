@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 11:04:20 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:39:36 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef enum	e_errors
 	NUMBER_REPETITION = 4,
 	MALLOC_ERROR = 5
 }				t_errors;
+
+typedef struct	s_stack_sizes
+{
+	int		size_a;
+	int		size_b;
+}				t_stack_sizes;
 
 typedef struct s_db_list
 {
