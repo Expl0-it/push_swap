@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 17:32:09 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 10:55:32 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:04:35 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	free_split(char **argv)
 	free(argv);
 }
 
-void	error_free(t_db_list **a, char **argv, bool is_argc_2, int code)
+void	error_free(t_db_list **a, char **argv, bool is_argc_2, t_errors code)
 {
 	if (NULL != a)
 		free_stack(a);

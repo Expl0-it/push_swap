@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/28 18:47:18 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:04:20 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // TODO: DLEATE LATER AFTER ADDING PRINTF TO LIBFT
 # include "../ft_printf/includes/ft_printf.h"
 
-enum	e_errors
+typedef enum	e_errors
 {
 	OK = 0,
 	NOT_ENOUGH_ARGUMENTS = 1,
@@ -27,7 +27,7 @@ enum	e_errors
 	INT_OVERFLOW = 3,
 	NUMBER_REPETITION = 4,
 	MALLOC_ERROR = 5
-};
+}				t_errors;
 
 typedef struct s_db_list
 {
@@ -60,7 +60,7 @@ bool		error_syntax(char *str_nb);
 bool		error_repetition(t_db_list *a, int nbr);
 void		free_stack(t_db_list **stack);
 void		free_split(char **argv);
-void		error_free(t_db_list **a, char **argv, bool is_argc_2, int code);
+void		error_free(t_db_list **a, char **argv, bool is_argc_2, t_errors code);
 
 // swap.c
 void	sa(t_db_list **a, bool checker);
