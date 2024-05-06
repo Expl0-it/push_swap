@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:37:25 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 13:34:42 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:12:11 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ long	ft_atol(const char *nptr)
 	return (num * minus);
 }
 
-void	stack_init(t_db_list **a, char **argv, bool is_argc_2)
+void	stack_init(t_stack *a, char **argv, bool is_argc_2)
 {
 	long		nbr;
 	int			i;
@@ -57,16 +57,16 @@ void	stack_init(t_db_list **a, char **argv, bool is_argc_2)
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
-			error_free(a, argv, is_argc_2, SYNTAX_ERROR);
+			error_free(&a->node, argv, is_argc_2, SYNTAX_ERROR);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-			error_free(a, argv, is_argc_2, INT_OVERFLOW);
-		if (error_repetition(*a, nbr))
-			error_free(a, argv, is_argc_2, NUMBER_REPETITION);
+			error_free(&a->node, argv, is_argc_2, INT_OVERFLOW);
+		if (error_repetition(a->node, nbr))
+			error_free(&a->node, argv, is_argc_2, NUMBER_REPETITION);
 		new = db_lstnew((int)nbr);
 		if (NULL == new)
-			error_free(a, argv, is_argc_2, MALLOC_ERROR);
-		db_lstadd_back(a, new);
+			error_free(&a->node, argv, is_argc_2, MALLOC_ERROR);
+		db_lstadd_back(&a->node, new);
 		i++;
 	}
 	if (is_argc_2)
