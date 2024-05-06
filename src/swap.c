@@ -6,43 +6,43 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 23:20:18 by mamichal          #+#    #+#             */
-/*   Updated: 2024/04/29 13:43:38 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:16:56 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	swap(t_db_list	**stack)
+static void	swap(t_db_list	**node)
 {
-	if (NULL == *stack || NULL == stack || NULL == (*stack)->next)
+	if (NULL == *node || NULL == node || NULL == (*node)->next)
 		return ;
-	*stack = (*stack)->next;
-	(*stack)->prev->prev = *stack;
-	(*stack)->prev->next = (*stack)->next;
-	if (NULL != (*stack)->next)
-		(*stack)->next->prev = (*stack)->prev;
-	(*stack)->next = (*stack)->prev;
-	(*stack)->prev = NULL;
+	*node = (*node)->next;
+	(*node)->prev->prev = *node;
+	(*node)->prev->next = (*node)->next;
+	if (NULL != (*node)->next)
+		(*node)->next->prev = (*node)->prev;
+	(*node)->next = (*node)->prev;
+	(*node)->prev = NULL;
 }
 
-void	sa(t_db_list **a, bool checker)
+void	sa(t_stack *a, bool checker)
 {
-	swap(a);
+	swap(&a->node);
 	if (!checker)
 		ft_printf("sa\n");
 }
 
-void	sb(t_db_list **b, bool checker)
+void	sb(t_stack *b, bool checker)
 {
-	swap(b);
+	swap(&b->node);
 	if (!checker)
 		ft_printf("sb\n");
 }
 
-void	ss(t_db_list **a, t_db_list **b, bool checker)
+void	ss(t_stack *a, t_stack *b, bool checker)
 {
-	swap(a);
-	swap(b);
+	swap(&a->node);
+	swap(&b->node);
 	if (!checker)
 		ft_printf("ss\n");
 }
