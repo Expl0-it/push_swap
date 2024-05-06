@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 17:32:09 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 11:04:35 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:45:23 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ bool	error_repetition(t_db_list *a, int nbr)
 	return (false);
 }
 
-void	free_stack(t_db_list **stack)
+void	free_stack_nodes(t_db_list **first_node)
 {
 	t_db_list	*tmp;
 	t_db_list	*current;
 
-	if (NULL == stack)
+	if (NULL == first_node)
 		return ;
-	current = *stack;
+	current = *first_node;
 	while (current)
 	{
 		tmp = current->next;
@@ -77,7 +77,7 @@ void	free_split(char **argv)
 void	error_free(t_db_list **a, char **argv, bool is_argc_2, t_errors code)
 {
 	if (NULL != a)
-		free_stack(a);
+		free_stack_nodes(a);
 	if (is_argc_2)
 		free_split(argv);
 	ft_printf("Error\n");
