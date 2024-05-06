@@ -6,21 +6,21 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:24:24 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 11:27:46 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:29:52 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-bool	is_sorted(t_db_list *stack)
+bool	is_sorted(t_db_list *node)
 {
-	if (NULL == stack)
+	if (NULL == node)
 		return (true);
-	while (stack->next)
+	while (node->next)
 	{
-		if (stack->value > stack->next->value)
+		if (node->value > node->next->value)
 			return (false);
-		stack = stack->next;
+		node = node->next;
 	}
 	return (true);
 }
