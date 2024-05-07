@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:47:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 21:01:42 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:52:46 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	push(t_stack *dst, t_stack *src)
 		(*dst).node = tmp;
 	}
 	(*src).size = (*src).size - 1;
-	(*dst).size++;
+	(*dst).size = (*dst).size + 1;
 }
 
 void	pa(t_stack *a, t_stack *b, bool checker)
