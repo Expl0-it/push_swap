@@ -6,12 +6,13 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:47:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/07 21:52:46 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:48:05 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+// NOTE: (*src).node === src->node ('->' is a dereference and access combined)
 static void	push(t_stack *dst, t_stack *src)
 {
 	t_db_list	*tmp;
