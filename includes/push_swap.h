@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 21:46:23 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:34:22 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,9 @@ void	rr(t_stack *a, t_stack *b, bool checker);
 void	rra(t_stack *a, bool checker);
 void	rrb(t_stack *b, bool checker);
 void	rrr(t_stack *a, t_stack *b, bool checker);
+
+// stack_utils.c
+bool	is_sorted(t_db_list *node);
+void	stack_set_sizes(t_stack *a, t_stack *b);
 
 #endif
