@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 13:20:49 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:34:45 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ void	stack_set_sizes(t_stack *a, t_stack *b);
 void	tiny_sort(t_stack *a);
 
 // init_node_utils.c
+void	set_position(t_stack *stack);
+void	set_target(t_stack *a, t_stack *b);
 void	init_list_utils(t_stack*a, t_stack *b);	
 
 #endif
