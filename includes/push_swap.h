@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/07 23:17:22 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/14 12:57:13 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,22 @@ typedef enum	e_errors
 	MALLOC_ERROR = 5
 }				t_errors;
 
+typedef struct s_ps_utils
+{
+	int					curr_pos;
+	int					final_pos;
+	int					push_price;
+	bool				above_median;
+	bool				cheapest;
+	struct	s_db_list*	target;
+}				t_ps_utils;
+
 typedef struct s_db_list
 {
 	int					value;
 	struct s_db_list	*next;
 	struct s_db_list	*prev;
+	t_ps_utils	utils;
 }				t_db_list;
 
 typedef struct s_stack
@@ -94,5 +105,8 @@ void	stack_set_sizes(t_stack *a, t_stack *b);
 
 // tiny_sort.c
 void	tiny_sort(t_stack *a);
+
+// init_node_utils.c
+void	init_list_utils(t_stack*a, t_stack *b);	
 
 #endif
