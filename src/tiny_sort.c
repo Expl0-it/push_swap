@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 22:50:59 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/07 23:16:30 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/14 12:47:22 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <limits.h>
 
 static t_db_list	*find_highest(t_stack stack)
 {
@@ -49,4 +48,12 @@ void	tiny_sort(t_stack *a)
 		rra(a, false);
 	if (a->node->value > a->node->next->value)
 		sa(a, false);
+}
+
+void	sort_five(t_stack *a, t_stack *b)
+{
+	while (a->size > 3)
+	{
+		init_list_utils(a, b);	
+	}
 }
