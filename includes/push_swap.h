@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 12:57:13 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/14 13:20:49 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_db_list	*db_lstnew(int value);
 t_db_list	*db_lstlast(t_db_list *lst);
 int		db_lstsize(t_db_list *lst);
 void		db_lstadd_back(t_db_list **lst, t_db_list *element);
+t_db_list	*find_smallest(t_db_list *node);
 
 // error_free.c
 bool		error_syntax(char *str_nb);
