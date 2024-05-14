@@ -6,13 +6,14 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:31:49 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 13:17:47 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:33:40 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <limits.h>
 
-static void	set_position(t_stack *stack)
+void	set_position(t_stack *stack)
 {
 	int	i;
 	int	mid_size;
@@ -30,6 +31,34 @@ static void	set_position(t_stack *stack)
 			stack->node->utils.above_median = false;
 		stack->node = stack->node->next;
 		i++;
+	}
+}
+
+void	set_target(t_stack *a, t_stack *b)
+{
+	t_db_list	*current_a;
+	t_db_list	*target;
+	long		best_match;
+
+	while (b->node)
+	{
+		best_match = LONG_MAX;
+		current_a = a->node;
+		while (current_a)
+		{
+			if (current_a->value > b->node->value
+				&& current_a->value < best_match)
+			{
+				best_match = current_a->value;
+				target = current_a;
+			}
+			current_a = current_a->next;
+		}
+		if (LONG_MAX == best_match)
+			b->node->utils.target = find_smallest(a->node);
+		else
+			b->node->utils.target = target;
+		b->node = b->node->next;
 	}
 }
 
