@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:31:49 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/17 14:56:41 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:59:51 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	set_cheapest(t_stack *stack)
 	best_match_node->utils.cheapest = true;
 }
 
+// TODO: TO BE TESTED!!!
 void	init_list_utils(t_stack *a, t_stack *b)
 {
 	set_position(a);
