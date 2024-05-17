@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_node_utils.c                                  :+:      :+:    :+:   */
+/*   init_list_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:31:49 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/16 13:45:24 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:56:41 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,46 @@ void	set_target(t_stack *a, t_stack *b)
 	}
 }
 
+void	set_price(t_stack *a, t_stack *b)
+{
+	while (b)
+	{
+		b->node->utils.price = b->node->utils.curr_pos; 
+		if (!(b->node->utils.above_median))
+			b->node->utils.price = b->size - (b->node->utils.curr_pos);
+		if (b->node->utils.target->utils.above_median)
+			b->node->utils.price += b->node->utils.target->utils.curr_pos;
+		else
+			b->node->utils.price += a->size - (b->node->utils.target->utils.curr_pos);
+		b->node = b->node->next;
+	}
+}
+
+void	set_cheapest(t_stack *stack)
+{
+	long		best_match_value;
+	t_db_list	*best_match_node;
+
+	if (NULL == stack)
+		return ;
+	best_match_value = LONG_MAX;
+	while (stack->node)
+	{
+		if (stack->node->utils.price < best_match_value)
+		{
+			best_match_value = stack->node->utils.price;
+			best_match_node = stack->node;
+		}
+		stack->node = stack->node->next;
+	}
+	best_match_node->utils.cheapest = true;
+}
+
 void	init_list_utils(t_stack *a, t_stack *b)
 {
 	set_position(a);
 	set_position(b);
 	set_target(a, b);
+	set_price(a, b);
+	set_cheapest(b);
 }
