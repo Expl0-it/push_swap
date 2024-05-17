@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 18:34:45 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:56:09 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_ps_utils
 {
 	int					curr_pos;
 	int					final_pos;
-	int					push_price;
+	int					price;
 	bool				above_median;
 	bool				cheapest;
 	struct	s_db_list*	target;
@@ -110,6 +110,8 @@ void	tiny_sort(t_stack *a);
 // init_node_utils.c
 void	set_position(t_stack *stack);
 void	set_target(t_stack *a, t_stack *b);
-void	init_list_utils(t_stack*a, t_stack *b);	
+void	set_price(t_stack *a, t_stack *b);
+void	set_cheapest(t_stack *stack);
+void	init_list_utils(t_stack *a, t_stack *b);
 
 #endif
