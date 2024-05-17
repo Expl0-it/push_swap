@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:31:49 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 18:33:40 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:45:24 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ void	init_list_utils(t_stack *a, t_stack *b)
 {
 	set_position(a);
 	set_position(b);
+	set_target(a, b);
 }
