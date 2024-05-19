@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/19 15:59:44 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/19 16:22:48 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	stack_set_sizes(t_stack *a, t_stack *b);
 
 // tiny_sort.c
 void	tiny_sort(t_stack *a);
-void	sort_five(t_stack *a, t_stack *b);
+void	a_leave_three(t_stack *a, t_stack *b);
 
 // init_node_utils.c
 void	set_position(t_stack *stack);
