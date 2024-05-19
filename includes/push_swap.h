@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/17 14:56:09 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/19 15:59:44 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	stack_set_sizes(t_stack *a, t_stack *b);
 
 // tiny_sort.c
 void	tiny_sort(t_stack *a);
+void	sort_five(t_stack *a, t_stack *b);
 
 // init_node_utils.c
 void	set_position(t_stack *stack);
@@ -113,5 +114,8 @@ void	set_target(t_stack *a, t_stack *b);
 void	set_price(t_stack *a, t_stack *b);
 void	set_cheapest(t_stack *stack);
 void	init_list_utils(t_stack *a, t_stack *b);
+
+// advanced_motions.c
+void	put_node_on_top(t_stack *stack, t_db_list *top_node, char stack_name);
 
 #endif
