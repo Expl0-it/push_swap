@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 22:50:59 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/19 16:30:11 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/19 17:25:21 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,8 @@ void	a_leave_three(t_stack *a, t_stack *b)
 {
 	while (a->size > 3)
 	{
-		init_list_utils(a, b);	
+		init_list_utils(*a, *b);
 		put_node_on_top(a, find_smallest(a->node), 'a');
 		pb(b, a, false);
-		ft_printf("%d", a->size);
 	}
 }
