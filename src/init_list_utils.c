@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:31:49 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/17 14:59:51 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/19 16:11:17 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	set_target(t_stack *a, t_stack *b)
 
 void	set_price(t_stack *a, t_stack *b)
 {
-	while (b)
+	while (b->node)
 	{
 		b->node->utils.price = b->node->utils.curr_pos; 
 		if (!(b->node->utils.above_median))
