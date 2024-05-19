@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 22:50:59 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 12:47:22 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/19 16:01:58 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ void	sort_five(t_stack *a, t_stack *b)
 	while (a->size > 3)
 	{
 		init_list_utils(a, b);	
+		put_node_on_top(a, find_smallest(a->node), 'a');
+		pb(b, a, false);
 	}
 }
