@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/19 17:22:03 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/05/25 13:35:17 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,8 @@ void	init_list_utils(t_stack a, t_stack b);
 
 // advanced_motions.c
 void	put_node_on_top(t_stack *stack, t_db_list *top_node, char stack_name);
+
+// push_swap.c
+void	push_swap(t_stack *a, t_stack *b);
 
 #endif
