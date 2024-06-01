@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:52:57 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/19 15:58:34 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/01 14:44:51 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,34 @@ void	put_node_on_top(t_stack *stack, t_db_list *top_node, char stack_name)
 				rrb(stack, false);
 		}
 	}
+}
+
+void	rotate_both(t_stack *a, t_stack *b, t_db_list *cheapest)
+{
+	while (a->node != cheapest->utils.target && b->node != cheapest)
+		rr(a, b, false);
+	set_position(*a);
+	set_position(*b);
+}
+
+void	reverse_rotate_both(t_stack *a, t_stack *b, t_db_list *cheapest)
+{
+	while (a->node != cheapest->utils.target && b->node != cheapest)
+		rrr(a, b, false);
+	set_position(*a);
+	set_position(*b);
+}
+
+void	move_nodes(t_stack *a, t_stack *b)
+{
+	t_db_list	*cheapest;
+
+	cheapest = return_cheapest(*b);
+	if (cheapest->utils.above_median && cheapest->utils.target->utils.above_median)
+		rotate_both(a, b, cheapest);
+	else if (!(cheapest->utils.above_median) && !(cheapest->utils.target->utils.above_median))
+		reverse_rotate_both(a, b, cheapest);
+	put_node_on_top(b, cheapest, 'b');
+	put_node_on_top(a, cheapest->utils.target, 'a');
+	pa(a, b, false);
 }
