@@ -6,11 +6,12 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 17:32:09 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 21:45:23 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/01 14:06:26 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <unistd.h>
 
 bool	error_syntax(char *str_nb)
 {
@@ -80,6 +81,6 @@ void	error_free(t_db_list **a, char **argv, bool is_argc_2, t_errors code)
 		free_stack_nodes(a);
 	if (is_argc_2)
 		free_split(argv);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(code);
 }
