@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:22:52 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/14 13:16:40 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/01 13:57:59 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int		db_lstsize(t_db_list *lst)
 void	db_lstadd_back(t_db_list **lst, t_db_list *element)
 {
 	t_db_list	*last;
-	t_db_list	*previous;
 
 	if (NULL != lst && NULL != element)
 	{
