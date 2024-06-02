@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/01 14:45:13 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/02 19:38:45 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 
 // INCLUDES
 # include <stdlib.h>
-# include "../ft_printf/libft/libft.h"
+# include <string.h>
+# include <unistd.h>
+# include <limits.h>
+# include <stdbool.h>
 // TODO: DLEATE LATER AFTER ADDING PRINTF TO LIBFT
-# include "../ft_printf/includes/ft_printf.h"
+//# include "../libft/includes/ft_printf.h"
+# include "../libft/libft.h"
 
 typedef enum	e_errors
 {
