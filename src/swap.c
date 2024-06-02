@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 23:20:18 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 21:16:56 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/02 19:30:36 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	sa(t_stack *a, bool checker)
 {
 	swap(&a->node);
 	if (!checker)
-		ft_printf("sa\n");
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *b, bool checker)
 {
 	swap(&b->node);
 	if (!checker)
-		ft_printf("sb\n");
+		write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *a, t_stack *b, bool checker)
@@ -44,5 +44,5 @@ void	ss(t_stack *a, t_stack *b, bool checker)
 	swap(&a->node);
 	swap(&b->node);
 	if (!checker)
-		ft_printf("ss\n");
+		write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 22:20:12 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/05 21:53:11 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/02 19:29:35 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ra(t_stack *a, bool checker)
 {
 	rotate(&a->node);
 	if (!checker)
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 }
 
 void	rb(t_stack *b, bool checker)
 {
 	rotate(&b->node);
 	if (!checker)
-		ft_printf("rb\n");
+		write(1, "rb\n", 3);
 }
 
 void	rr(t_stack *a, t_stack *b, bool checker)
@@ -45,5 +45,5 @@ void	rr(t_stack *a, t_stack *b, bool checker)
 	rotate(&a->node);
 	rotate(&b->node);
 	if (!checker)
-		ft_printf("rr\n");
+		write(1, "rr\n", 3);
 }

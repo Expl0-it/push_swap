@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:47:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/19 17:01:14 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/02 19:28:44 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void	pa(t_stack *a, t_stack *b, bool checker)
 {
 	push(a, b);
 	if (!checker)
-		ft_printf("pa\n");
+		write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *b, t_stack *a, bool checker)
 {
 	push(b, a);
 	if (!checker)
-		ft_printf("pb\n");
+		write(1, "pb\n", 3);
 }
