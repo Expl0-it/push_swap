@@ -19,6 +19,13 @@ static void	free_stacks(t_stack *a, t_stack *b)
 	free_stack_nodes(&(a->node));
 }
 
+static void	handle_error(t_stack *a, t_stack *b)
+{
+	free_stacks(a, b);
+	write(STDERR_FILENO, "Error\n", 6);
+	exit(CHECKER_COMMAND_ERROR);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
