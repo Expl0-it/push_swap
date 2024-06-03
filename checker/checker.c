@@ -6,11 +6,18 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:01:24 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/03 14:01:26 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:02:20 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./checker.h"
+
+static void	free_stacks(t_stack *a, t_stack *b)
+{
+	if (b->size != 0)
+		free_stack_nodes(&(b->node));
+	free_stack_nodes(&(a->node));
+}
 
 int	main(int argc, char **argv)
 {
