@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:01:24 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/03 15:02:20 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:36:05 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,34 @@ static void	handle_error(t_stack *a, t_stack *b)
 	exit(CHECKER_COMMAND_ERROR);
 }
 
+static void	exec_command(t_stack *a, t_stack *b, char *command)
+{
+	if (!ft_strncmp(command, "pa\n", 3))
+		pa(a, b, true);
+	else if (!ft_strncmp(command, "pb\n", 3))
+		pb(b, a, true);
+	else if (!ft_strncmp(command, "sa\n", 3))
+		sa(a, true);
+	else if (!ft_strncmp(command, "sb\n", 3))
+		sb(b, true);
+	else if (!ft_strncmp(command, "ss\n", 3))
+		ss(a, b, true);
+	else if (!ft_strncmp(command, "ra\n", 3))
+		ra(a, true);
+	else if (!ft_strncmp(command, "rb\n", 3))
+		rb(b, true);
+	else if (!ft_strncmp(command, "rr\n", 3))
+		rr(a, b, true);
+	else if (!ft_strncmp(command, "rra\n", 4))
+		rra(a, true);
+	else if (!ft_strncmp(command, "rrb\n", 4))
+		rrb(b, true);
+	else if (!ft_strncmp(command, "rrr\n", 4))
+		rrr(a, b, true);
+	else
+		handle_error(a, b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
@@ -43,7 +71,7 @@ int	main(int argc, char **argv)
 	next_line = get_next_line(STDIN_FILENO);
 	while (next_line)
 	{
-		exec_command();
+		exec_command(&a, &b, next_line);
 		next_line = get_next_line(STDIN_FILENO);
 	}
 	if (stack_is_sorted(a.node) && b.size == 0)
