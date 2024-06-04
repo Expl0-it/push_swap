@@ -1,50 +1,60 @@
-NAME        := push_swap
-CC        := cc
-FLAGS    := -Wall -Wextra -Werror 
-RM		    := rm -f
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/04 14:28:44 by mamichal          #+#    #+#              #
+#    Updated: 2024/06/04 14:36:16 by mamichal         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-LIBFT_PATH := ./libft
-LIBFT := ./libft/libft.a
+NAME = push_swap
+CC = cc
+FLAGS = -Wall -Wextra -Werror 
+RM = rm -fr
 
-SRCS        :=      src/stack_init.c \
-                          src/init_list_utils.c \
-                          src/tiny_sort.c \
-                          src/db_linked_list_utils.c \
-                          src/error_free.c \
-                          src/advanced_motions.c \
-                          src/push_swap.c \
-                          src/stack_utils.c \
-                          src/main.c \
-                          src/reverse_rotate.c \
-                          src/push.c \
-                          src/rotate.c \
-                          src/swap.c \
-                          
-OBJS        := $(SRCS:.c=.o)
+LIBFT_PATH = ./libft
+LIBFT = $(LIBFT_PATH)/libft.a
+
+SRCS = src/stack_init.c \
+		src/init_list_utils.c \
+		src/tiny_sort.c \
+		src/db_linked_list_utils.c \
+		src/error_free.c \
+		src/advanced_motions.c \
+		src/push_swap.c \
+		src/stack_utils.c \
+		src/main.c \
+		src/reverse_rotate.c \
+		src/push.c \
+		src/rotate.c \
+		src/swap.c
+
+OBJS = $(SRCS:.c=.o)
 
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
+${NAME}: ${OBJS} ${LIBFT}
+	${CC} ${FLAGS} -o ${NAME} ${OBJS} ${LIBFT}
 
+all: ${NAME}
 
-${NAME}:	${OBJS} ${LIBFT}
-			${CC} ${FLAGS} -o ${NAME} ${OBJS} ${LIBFT}
-
-all:		${NAME}
-
-bonus:		all
+bonus: all
 
 ${LIBFT}:
-			make -C ${LIBFT_PATH} all
+	make -C ${LIBFT_PATH} all
 
 clean:
-			@ ${RM} *.o */*.o */*/*.o
+	@ ${RM} *.o */*.o */*/*.o
 
-fclean:		clean
-			@ ${RM} ${NAME}
+fclean: clean
+	@ ${RM} ${NAME}
 
-re:			fclean all
+re: fclean all
 
 .SILENT:
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re
