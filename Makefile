@@ -6,16 +6,18 @@
 #    By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 14:28:44 by mamichal          #+#    #+#              #
-#    Updated: 2024/06/04 15:08:54 by mamichal         ###   ########.fr        #
+#    Updated: 2024/06/04 15:50:37 by mamichal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+NAME_BONUS = push_swap_checker
 ARCH = push_swap.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror 
 RM = rm -fr
 INCLUDES = ./includes/push_swap.h
+BONUS_INCLUDES = ./checker/checker.h
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
@@ -34,6 +36,13 @@ SRCS = src/stack_init.c \
 
 OBJS = $(SRCS:.c=.o)
 
+BONUS_SRCS = checker/checker.c \
+				checker/get_next_line.h \
+				checker/get_next_line.c \
+				checker/get_next_line_utils.c
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o} -include $(INCLUDES)
 
@@ -45,7 +54,8 @@ $(ARCH): $(OBJS)
 
 all: ${NAME}
 
-bonus: all
+bonus: $(NAME) $(BONUS_OBJS)
+	${CC} ${FLAGS} -o ${NAME_BONUS} ${BONUS_OBJS} ${ARCH} ${LIBFT} -include $(INCLUDES) $(BONUS_INCLUDES)
 
 ${LIBFT}:
 	make -C ${LIBFT_PATH} all
@@ -56,7 +66,7 @@ clean:
 	echo Only Exec Left
 
 fclean: clean
-	@ ${RM} ${NAME}
+	@ ${RM} ${NAME} ${NAME_BONUS}
 	echo All Clear
 
 re: fclean all
