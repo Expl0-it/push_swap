@@ -6,15 +6,16 @@
 #    By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 14:28:44 by mamichal          #+#    #+#              #
-#    Updated: 2024/06/04 14:36:16 by mamichal         ###   ########.fr        #
+#    Updated: 2024/06/04 15:08:54 by mamichal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+ARCH = push_swap.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror 
 RM = rm -fr
-
+INCLUDES = ./includes/push_swap.h
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
@@ -26,7 +27,6 @@ SRCS = src/stack_init.c \
 		src/advanced_motions.c \
 		src/push_swap.c \
 		src/stack_utils.c \
-		src/main.c \
 		src/reverse_rotate.c \
 		src/push.c \
 		src/rotate.c \
@@ -35,10 +35,13 @@ SRCS = src/stack_init.c \
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o} -include $(INCLUDES)
 
-${NAME}: ${OBJS} ${LIBFT}
-	${CC} ${FLAGS} -o ${NAME} ${OBJS} ${LIBFT}
+${NAME}: ${ARCH} ${LIBFT}
+	${CC} ${FLAGS} -o ${NAME} src/main.c ${ARCH} ${LIBFT} -include $(INCLUDES)
+
+$(ARCH): $(OBJS)
+	ar rcs $(ARCH) $(OBJS)
 
 all: ${NAME}
 
@@ -49,9 +52,12 @@ ${LIBFT}:
 
 clean:
 	@ ${RM} *.o */*.o */*/*.o
+	@ ${RM} $(ARCH)
+	echo Only Exec Left
 
 fclean: clean
 	@ ${RM} ${NAME}
+	echo All Clear
 
 re: fclean all
 
