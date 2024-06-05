@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:22:52 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/01 13:57:59 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:40:20 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_db_list	*db_lstlast(t_db_list *lst)
 	return (lst);
 }
 
-int		db_lstsize(t_db_list *lst)
+int	db_lstsize(t_db_list *lst)
 {
 	int	length;
 
