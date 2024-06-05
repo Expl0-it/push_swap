@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:50:45 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/25 13:35:35 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:43:37 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 		if (a.size == 2 || a.size == 3)
 			tiny_sort(&a);
 		else
-			push_swap(&a, &b);	
+			push_swap(&a, &b);
 	}
 	free_stack_nodes(&a.node);
 	return (OK);
