@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/02 19:38:45 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:32:37 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 //# include "../libft/includes/ft_printf.h"
 # include "../libft/libft.h"
 
-typedef enum	e_errors
+typedef enum e_errors
 {
 	OK = 0,
 	NOT_ENOUGH_ARGUMENTS = 1,
@@ -40,7 +40,7 @@ typedef struct s_ps_utils
 	int					price;
 	bool				above_median;
 	bool				cheapest;
-	struct	s_db_list*	target;
+	struct s_db_list	*target;
 }				t_ps_utils;
 
 typedef struct s_db_list
@@ -48,7 +48,7 @@ typedef struct s_db_list
 	int					value;
 	struct s_db_list	*next;
 	struct s_db_list	*prev;
-	t_ps_utils	utils;
+	t_ps_utils			utils;
 }				t_db_list;
 
 typedef struct s_stack
@@ -74,7 +74,7 @@ t_db_list	*db_lstnew(int value);
  * @return Last node of the list
 */
 t_db_list	*db_lstlast(t_db_list *lst);
-int		db_lstsize(t_db_list *lst);
+int			db_lstsize(t_db_list *lst);
 void		db_lstadd_back(t_db_list **lst, t_db_list *element);
 t_db_list	*find_smallest(t_db_list *node);
 
@@ -83,48 +83,49 @@ bool		error_syntax(char *str_nb);
 bool		error_repetition(t_db_list *a, int nbr);
 void		free_stack_nodes(t_db_list **first_node);
 void		free_split(char **argv);
-void		error_free(t_db_list **a, char **argv, bool is_argc_2, t_errors code);
+void		error_free(t_db_list **a, char **argv, \
+				 bool is_argc_2, t_errors code);
 
 // swap.c
-void	sa(t_stack *a, bool checker);
-void	sb(t_stack *b, bool checker);
-void	ss(t_stack *a, t_stack *b, bool checker);
+void		sa(t_stack *a, bool checker);
+void		sb(t_stack *b, bool checker);
+void		ss(t_stack *a, t_stack *b, bool checker);
 
 // push.c
-void	pa(t_stack *a, t_stack *b, bool checker);
-void	pb(t_stack *b, t_stack *a, bool checker);
+void		pa(t_stack *a, t_stack *b, bool checker);
+void		pb(t_stack *b, t_stack *a, bool checker);
 
 // rotate.c
-void	ra(t_stack *a, bool checker);
-void	rb(t_stack *b, bool checker);
-void	rr(t_stack *a, t_stack *b, bool checker);
+void		ra(t_stack *a, bool checker);
+void		rb(t_stack *b, bool checker);
+void		rr(t_stack *a, t_stack *b, bool checker);
 
 // reverse_rotate.c
-void	rra(t_stack *a, bool checker);
-void	rrb(t_stack *b, bool checker);
-void	rrr(t_stack *a, t_stack *b, bool checker);
+void		rra(t_stack *a, bool checker);
+void		rrb(t_stack *b, bool checker);
+void		rrr(t_stack *a, t_stack *b, bool checker);
 
 // stack_utils.c
-bool	stack_is_sorted(t_db_list *node);
-void	stack_set_sizes(t_stack *a, t_stack *b);
+bool		stack_is_sorted(t_db_list *node);
+void		stack_set_sizes(t_stack *a, t_stack *b);
 t_db_list	*return_cheapest(t_stack stack);
 
 // tiny_sort.c
-void	tiny_sort(t_stack *a);
-void	a_leave_three(t_stack *a, t_stack *b);
+void		tiny_sort(t_stack *a);
+void		a_leave_three(t_stack *a, t_stack *b);
 
 // init_node_utils.c
-void	set_position(t_stack stack);
-void	set_target(t_stack a, t_stack b);
-void	set_price(t_stack a, t_stack b);
-void	set_cheapest(t_stack stack);
-void	init_list_utils(t_stack a, t_stack b);
+void		set_position(t_stack stack);
+void		set_target(t_stack a, t_stack b);
+void		set_price(t_stack a, t_stack b);
+void		set_cheapest(t_stack stack);
+void		init_list_utils(t_stack a, t_stack b);
 
 // advanced_motions.c
-void	put_node_on_top(t_stack *stack, t_db_list *top_node, char stack_name);
-void	move_nodes(t_stack *a, t_stack *b);
+void		put_node_on_top(t_stack *stack, t_db_list *top_node, char stack_name);
+void		move_nodes(t_stack *a, t_stack *b);
 
 // push_swap.c
-void	push_swap(t_stack *a, t_stack *b);
+void		push_swap(t_stack *a, t_stack *b);
 
 #endif
