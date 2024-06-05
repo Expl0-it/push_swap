@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 12:01:06 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/05 14:29:17 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:33:53 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 typedef struct s_str_list
 {
 	char				*content;
-	struct	s_str_list	*next;
+	struct s_str_list	*next;
 }			t_str_list;
 
 /*
