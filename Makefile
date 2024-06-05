@@ -6,7 +6,7 @@
 #    By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 14:28:44 by mamichal          #+#    #+#              #
-#    Updated: 2024/06/04 15:50:37 by mamichal         ###   ########.fr        #
+#    Updated: 2024/06/05 14:46:26 by mamichal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 ${NAME}: ${ARCH} ${LIBFT}
 	${CC} ${FLAGS} -o ${NAME} src/main.c ${ARCH} ${LIBFT} -include $(INCLUDES)
+	echo Compiling Base Executable
 
 $(ARCH): $(OBJS)
 	ar rcs $(ARCH) $(OBJS)
@@ -56,6 +57,7 @@ all: ${NAME}
 
 bonus: $(NAME) $(BONUS_OBJS)
 	${CC} ${FLAGS} -o ${NAME_BONUS} ${BONUS_OBJS} ${ARCH} ${LIBFT} -include $(INCLUDES) $(BONUS_INCLUDES)
+	echo Compiling Bonus Executable
 
 ${LIBFT}:
 	make -C ${LIBFT_PATH} all
