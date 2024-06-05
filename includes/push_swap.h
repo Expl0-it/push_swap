@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/05 14:36:08 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:37:40 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,8 @@ void		set_cheapest(t_stack stack);
 void		init_list_utils(t_stack a, t_stack b);
 
 // advanced_motions.c
-void		put_node_on_top(t_stack *stack, t_db_list *top_node, char stack_name);
+void		put_node_on_top(t_stack *stack, \
+				t_db_list *top_node, char stack_name);
 void		move_nodes(t_stack *a, t_stack *b);
 
 // push_swap.c
