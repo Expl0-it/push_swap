@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/06/05 14:32:37 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:36:08 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ bool		error_repetition(t_db_list *a, int nbr);
 void		free_stack_nodes(t_db_list **first_node);
 void		free_split(char **argv);
 void		error_free(t_db_list **a, char **argv, \
-				 bool is_argc_2, t_errors code);
+				bool is_argc_2, t_errors code);
 
 // swap.c
 void		sa(t_stack *a, bool checker);
