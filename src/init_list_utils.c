@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:31:49 by mamichal          #+#    #+#             */
-/*   Updated: 2024/05/19 17:25:08 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:42:56 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	set_position(t_stack stack)
 
 	i = 0;
 	if (NULL == stack.node)
-		return;
+		return ;
 	mid_size = stack.size / 2;
 	while (stack.node)
 	{
@@ -66,13 +66,14 @@ void	set_price(t_stack a, t_stack b)
 {
 	while (b.node)
 	{
-		b.node->utils.price = b.node->utils.curr_pos; 
+		b.node->utils.price = b.node->utils.curr_pos;
 		if (!(b.node->utils.above_median))
 			b.node->utils.price = b.size - (b.node->utils.curr_pos);
 		if (b.node->utils.target->utils.above_median)
 			b.node->utils.price += b.node->utils.target->utils.curr_pos;
 		else
-			b.node->utils.price += a.size - (b.node->utils.target->utils.curr_pos);
+			b.node->utils.price += a.size - \
+				(b.node->utils.target->utils.curr_pos);
 		b.node = b.node->next;
 	}
 }
