@@ -6,7 +6,7 @@
 #    By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 14:28:44 by mamichal          #+#    #+#              #
-#    Updated: 2024/06/05 14:46:26 by mamichal         ###   ########.fr        #
+#    Updated: 2024/06/06 13:57:26 by mamichal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ ${LIBFT}:
 clean:
 	@ ${RM} *.o */*.o */*/*.o
 	@ ${RM} $(ARCH)
+	make -C ${LIBFT_PATH} fclean
 	echo Only Exec Left
 
 fclean: clean
